@@ -11,12 +11,22 @@ import Foundation
 class UpperLeftCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalculation {
 
     override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
+        let last = params.lastAction, lastAction = last?.action, lastSubAction = last?.subAction
 
-        if params.lastAction == nil || !Defaults.subsequentExecutionMode.resizes {
-            return calculateFirstRect(params)
+        if lastAction == .topLeft {
+            switch lastSubAction {
+            case .topLeft:
+                return WindowCalculationFactory.upperRightCalculation.calculateRect(params)
+            case .topRight:
+                return WindowCalculationFactory.lowerLeftCalculation.calculateRect(params)
+            case .bottomLeft:
+                return WindowCalculationFactory.lowerRightCalculation.calculateRect(params)
+            default:
+                break
+            }
         }
-        
-        return calculateRepeatedRect(params)
+
+        return calculateFirstRect(params)
     }
     
     func calculateFractionalRect(_ params: RectCalculationParameters, fraction: Float) -> RectResult {
@@ -28,6 +38,6 @@ class UpperLeftCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalcula
         
         rect.size.height = floor(visibleFrameOfScreen.height / 2.0)
         rect.origin.y = visibleFrameOfScreen.maxY - rect.height
-        return RectResult(rect)
+        return RectResult(rect, resultingAction: .topLeft, subAction: .topLeft)
     }
 }

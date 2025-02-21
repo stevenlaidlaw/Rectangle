@@ -11,12 +11,7 @@ import Foundation
 class LowerRightCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalculation {
 
     override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
-
-        if params.lastAction == nil || !Defaults.subsequentExecutionMode.resizes {
-            return calculateFirstRect(params)
-        }
-        
-        return calculateRepeatedRect(params)
+        return calculateFirstRect(params)
     }
     
     func calculateFractionalRect(_ params: RectCalculationParameters, fraction: Float) -> RectResult {
@@ -28,6 +23,6 @@ class LowerRightCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalcul
         rect.origin.x = visibleFrameOfScreen.maxX - rect.width
         rect.size.height = floor(visibleFrameOfScreen.height / 2.0)
         
-        return RectResult(rect)
+        return RectResult(rect, resultingAction: .topLeft, subAction: .bottomRight)
     }
 }

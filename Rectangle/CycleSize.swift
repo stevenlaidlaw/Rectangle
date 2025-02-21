@@ -14,6 +14,7 @@ enum CycleSize: Int, CaseIterable {
     case oneThird = 2
     case oneQuarter = 3
     case threeQuarters = 4
+    case oneWhole = 5
     
     static func fromBits(bits: Int) -> Set<CycleSize> {
         Set(
@@ -24,7 +25,7 @@ enum CycleSize: Int, CaseIterable {
     }
     
     static var firstSize = CycleSize.oneHalf
-    static var defaultSizes: Set<CycleSize> = [.oneHalf, .twoThirds, .oneThird]
+    static var defaultSizes: Set<CycleSize> = [.oneQuarter, .oneThird, .oneHalf, .twoThirds, .threeQuarters, .oneWhole]
     
     // The expected order of the cycle sizes is to start with the
     // first division, then go gradually upwards in size and wrap
@@ -60,6 +61,8 @@ extension CycleSize {
             "¼"
         case .threeQuarters:
             "¾"
+        case .oneWhole:
+            "1"
         }
     }
     
@@ -75,6 +78,8 @@ extension CycleSize {
             1 / 4
         case .threeQuarters:
             3 / 4
+        case .oneWhole:
+            1
         }
     }
     

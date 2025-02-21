@@ -621,6 +621,11 @@ enum SubWindowAction {
     topTwoThirds,
     bottomTwoThirds,
     
+    topLeft,
+    topRight,
+    bottomLeft,
+    bottomRight,
+    
     leftFourth,
     centerLeftFourth,
     centerRightFourth,
@@ -762,6 +767,10 @@ enum SubWindowAction {
         case .maximize: return .none
         case .leftTodo: return .right
         case .rightTodo: return .left
+        case .topLeft: return [.right, .bottom]
+        case .topRight: return [.left, .bottom]
+        case .bottomLeft: return [.right, .top]
+        case .bottomRight: return [.left, .top]
         }
     }
 }
