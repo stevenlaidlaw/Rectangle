@@ -24,8 +24,8 @@ sudo codesign --force --deep --sign - "/Applications/Rectangle.app"
 echo_color "34" "Resetting Accessibility permissions"
 tccutil reset Accessibility com.knollsoft.Rectangle
 
-# echo_color "34" "Setting preferences"
-# defaults write com.knollsoft.Rectangle subsequentExecutionMode -int 0
+echo_color "34" "Setting preferences"
+defaults write com.knollsoft.Rectangle subsequentExecutionMode -int 0
 
 echo_color "33" "Opening Rectangle"
 open "/Applications/Rectangle.app"
