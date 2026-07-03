@@ -12,6 +12,9 @@ killall Rectangle
 echo_color "31" "Removing old app"
 rm -rf "/Applications/Rectangle.app"
 
+# Stop on errors
+set -e
+
 echo_color "32" "Building"
 xcodebuild -project "Rectangle.xcodeproj" -scheme "Rectangle" -configuration "Debug" -derivedDataPath "build"
 
@@ -20,6 +23,9 @@ cp -R "build/Build/Products/Debug/Rectangle.app" "/Applications/"
 
 echo_color "34" "Signing app"
 sudo codesign --force --deep --sign - "/Applications/Rectangle.app"
+
+# Allow errors again
+set +e
 
 echo_color "34" "Resetting Accessibility permissions"
 tccutil reset Accessibility com.knollsoft.Rectangle

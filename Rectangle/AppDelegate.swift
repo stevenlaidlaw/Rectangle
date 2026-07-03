@@ -206,7 +206,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         Defaults.alternateDefaultShortcuts.enabled = usingRecommended
         
-        Defaults.subsequentExecutionMode.value = usingRecommended ? .acrossMonitor : .resize
+        Defaults.subsequentExecutionMode.value = .resize
         
         welcomeWindowController?.close()
     }

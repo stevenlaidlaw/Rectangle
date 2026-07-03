@@ -440,27 +440,15 @@ enum WindowAction: Int, Codable {
 
     var alternateDefault: Shortcut? {
         switch self {
-        case .leftHalf: return Shortcut( ctrl|alt, kVK_LeftArrow )
-        case .rightHalf: return Shortcut( ctrl|alt, kVK_RightArrow )
-        case .bottomHalf: return Shortcut( ctrl|alt, kVK_DownArrow )
-        case .topHalf: return Shortcut( ctrl|alt, kVK_UpArrow )
-        case .bottomLeft: return Shortcut( ctrl|alt, kVK_ANSI_J )
-        case .bottomRight: return Shortcut( ctrl|alt, kVK_ANSI_K )
-        case .topLeft: return Shortcut( ctrl|alt, kVK_ANSI_U )
-        case .topRight: return Shortcut( ctrl|alt, kVK_ANSI_I )
-        case .maximize: return Shortcut( ctrl|alt, kVK_Return )
-        case .maximizeHeight: return Shortcut( ctrl|alt|shift, kVK_UpArrow )
-        case .previousDisplay: return Shortcut( ctrl|alt|cmd, kVK_LeftArrow )
-        case .nextDisplay: return Shortcut( ctrl|alt|cmd, kVK_RightArrow )
-        case .larger: return Shortcut( ctrl|alt, kVK_ANSI_Equal )
-        case .smaller: return Shortcut( ctrl|alt, kVK_ANSI_Minus )
-        case .center: return Shortcut( ctrl|alt, kVK_ANSI_C )
-        case .restore: return Shortcut( ctrl|alt, kVK_Delete)
-        case .firstThird: return Shortcut( ctrl|alt, kVK_ANSI_D )
-        case .firstTwoThirds: return Shortcut( ctrl|alt, kVK_ANSI_E )
-        case .centerThird: return Shortcut( ctrl|alt, kVK_ANSI_F )
-        case .lastTwoThirds: return Shortcut( ctrl|alt, kVK_ANSI_T )
-        case .lastThird: return Shortcut( ctrl|alt, kVK_ANSI_G )
+        case .leftHalf: return Shortcut( ctrl|alt|shift|cmd, kVK_ANSI_J )
+        case .rightHalf: return Shortcut( ctrl|alt|shift|cmd, kVK_ANSI_L )
+        case .centerHalf: return Shortcut( ctrl|alt|shift|cmd, kVK_ANSI_K )
+        case .topLeft: return Shortcut( ctrl|alt|shift|cmd, kVK_ANSI_U )
+        case .maximize: return Shortcut( ctrl|alt|shift|cmd, kVK_ANSI_F )
+        case .larger: return Shortcut( ctrl|alt|shift|cmd, kVK_ANSI_Comma )
+        case .smaller: return Shortcut( ctrl|alt|shift|cmd, kVK_ANSI_Period )
+        case .center: return Shortcut( ctrl|alt|shift|cmd, kVK_ANSI_O )
+        case .topLeftSixth: return Shortcut( ctrl|alt|shift|cmd, kVK_ANSI_I )
         default: return nil
         }
     }
