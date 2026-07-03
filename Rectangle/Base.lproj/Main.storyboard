@@ -2682,16 +2682,16 @@
                                             </textField>
                                             <popUpButton verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="pVH-s3-FHn">
                                                 <rect key="frame" x="135" y="-4" width="319" height="25"/>
-                                                <popUpButtonCell key="cell" type="push" title="move to adjacent on left/right, or cycle size on half" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="3" imageScaling="proportionallyDown" inset="2" selectedItem="3GE-la-fAZ" id="ccx-Gx-MGO">
+                                                <popUpButtonCell key="cell" type="push" title="cycle sizes on half actions" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gHH-BV-5kP" id="ccx-Gx-MGO">
                                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="12" name="HelveticaNeue"/>
                                                     <menu key="menu" id="TkU-PT-5p8">
                                                         <items>
                                                             <menuItem title="do nothing" tag="2" id="jww-Ju-S3d"/>
                                                             <menuItem title="cycle through displays" tag="4" id="XlM-ch-cLG"/>
-                                                            <menuItem title="cycle sizes on half actions" id="gHH-BV-5kP"/>
+                                                            <menuItem title="cycle sizes on half actions" state="on" id="gHH-BV-5kP"/>
                                                             <menuItem title="move to adjacent display on left or right" tag="1" id="Z9d-Rl-RVq"/>
-                                                            <menuItem title="move to adjacent on left/right, or cycle size on half" state="on" tag="3" id="3GE-la-fAZ"/>
+                                                            <menuItem title="move to adjacent on left/right, or cycle size on half" tag="3" id="3GE-la-fAZ"/>
                                                         </items>
                                                     </menu>
                                                 </popUpButtonCell>
